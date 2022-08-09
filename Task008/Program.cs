@@ -7,4 +7,5 @@ while(count <= number)
     {
         Console.WriteLine(count);
     }
+    count++;
 }
