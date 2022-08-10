@@ -5,7 +5,7 @@ int thirdNumber = Convert.ToInt32(Console.ReadLine());
 int max = firstNumber;
 if(max < secondNumber)
 {
-    max = thirdNumber;
+    max = secondNumber;
 }
 else if(max < thirdNumber)
 {
