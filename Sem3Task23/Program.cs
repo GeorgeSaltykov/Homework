@@ -15,7 +15,7 @@ void numberN(int numberN)
     }
     else if (numberN < 0)
     {
-        for (int i = 1; i > numberN - 1; i--)
+        for (int i = - 1; i > numberN - 1; i--)
         {
             double result = Math.Pow(i, 3);
             Console.WriteLine(result);
