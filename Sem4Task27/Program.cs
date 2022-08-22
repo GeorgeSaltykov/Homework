@@ -8,7 +8,7 @@ void sum(string number)
     int result = 0;
     for(int i = 0; i < number.Length; i++)
     {
-        string stringTo = Convert.ToString(number[i]);
+        char stringTo = number[i];
         result = result + Convert.ToInt32(stringTo);
     }
     System.Console.WriteLine(result);
