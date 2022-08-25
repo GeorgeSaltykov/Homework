@@ -3,38 +3,38 @@
 //           1 0 0
 //           0 0 1
 
-void fillArray(int[] numberOf)
-{
-    for (int i = 0; i < numberOf.Length; i++)
-    {
-        numberOf[i] = new Random().Next(0, 2);
-        System.Console.Write($"{numberOf[i]} ");
-    }
-}
-System.Console.WriteLine("Введите размер массива");
-int userNumber = Convert.ToInt32(Console.ReadLine());
-int[] binaryArray = new int[userNumber];
+// void fillArray(int[] numberOf)
+// {
+//     for (int i = 0; i < numberOf.Length; i++)
+//     {
+//         numberOf[i] = new Random().Next(0, 2);
+//         System.Console.Write($"{numberOf[i]} ");
+//     }
+// }
+// System.Console.WriteLine("Введите размер массива");
+// int userNumber = Convert.ToInt32(Console.ReadLine());
+// int[] binaryArray = new int[userNumber];
 
 
-fillArray(binaryArray);
-System.Console.WriteLine();
+// fillArray(binaryArray);
+// System.Console.WriteLine();
 
 // Написать метод, принимающий бинарное представление числа и возвращает десятичное представление числа
 
-double binaryToDecimal(int[] binary)
-{
-    double dec = new int();
-    int position = binary.Length - 1;
-    for (int i = 0; i < binary.Length; i++)
-    {
-        double degree = binary[i] * Math.Pow(2, position);
-        dec = dec + degree;
-        position--;
-    }
-    return dec;
-}
+// double binaryToDecimal(int[] binary)
+// {
+//     double dec = new int();
+//     int position = binary.Length - 1;
+//     for (int i = 0; i < binary.Length; i++)
+//     {
+//         double degree = binary[i] * Math.Pow(2, position);
+//         dec = dec + degree;
+//         position--;
+//     }
+//     return dec;
+// }
 
-Console.WriteLine(binaryToDecimal(binaryArray));
+// Console.WriteLine(binaryToDecimal(binaryArray));
 
 // Написать метод, принимающий десятиченое представление и основание СС в которую нужно это число перевести, 2<= основание СС<= 9
 // 10,2 -> 1010
