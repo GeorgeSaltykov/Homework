@@ -9,7 +9,7 @@ void sum(string number)
     for(int i = 0; i < number.Length; i++)
     {
         char stringTo = number[i];
-        result = result + Convert.ToInt32(stringTo);
+        result += stringTo - '0';
     }
     System.Console.WriteLine(result);
 }
