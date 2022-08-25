@@ -45,113 +45,16 @@ void convertTo(string number, int numeralSystem)
 {
     string result = "";
     int toIntnumber = Convert.ToInt32(number);
-    if (numeralSystem == 2)
+    if (numeralSystem >= 2 && numeralSystem <= 9)
     {
         for (int i = 0; toIntnumber >= 1; i++)
         {
-            if (toIntnumber % numeralSystem == 0) result = result + "0";
-            else result = result + "1";
-            toIntnumber = toIntnumber / numeralSystem;
+            if (toIntnumber % numeralSystem == 0) result += "0";
+            else if (toIntnumber % numeralSystem > 0) result += Convert.ToString(toIntnumber % numeralSystem);
+            toIntnumber /= numeralSystem;
         }
     }
-    if (numeralSystem == 3)
-    {
-        for (int i = 0; toIntnumber >= 1; i++)
-        {
-            if (toIntnumber % numeralSystem == 0) result = result + "0";
-            else if (toIntnumber % numeralSystem == 1) result = result + "1";
-            else if (toIntnumber % numeralSystem == 2) result = result + "2";
-            else result = result + "1";
-            toIntnumber = toIntnumber / numeralSystem;
-        }
-    }
-    if (numeralSystem == 4)
-    {
-        for (int i = 0; toIntnumber >= 1; i++)
-        {
-            if (toIntnumber % numeralSystem == 0)result = result + "0";
-            else if (toIntnumber % numeralSystem == 1) result = result + "1";
-            else if (toIntnumber % numeralSystem == 2) result = result + "2";
-            else if (toIntnumber % numeralSystem == 3) result = result + "3";
-            else result = result + "1";
-            toIntnumber = toIntnumber / numeralSystem;
-        }
-    }
-    if (numeralSystem == 5)
-    {
-        for (int i = 0; toIntnumber >= 1; i++)
-        {
-            if (toIntnumber % numeralSystem == 0) result = result + "0";
-            else if (toIntnumber % numeralSystem == 1) result = result + "1";
-            else if (toIntnumber % numeralSystem == 2) result = result + "2";
-            else if (toIntnumber % numeralSystem == 3) result = result + "3";
-            else if (toIntnumber % numeralSystem == 4) result = result + "4";
-            else result = result + "1";
-            toIntnumber = toIntnumber / numeralSystem;
-        }
-    }
-    if(numeralSystem == 6)
-    {
-        for (int i = 0; toIntnumber >= 1; i++)
-        {
-            if (toIntnumber % numeralSystem == 0) result = result + "0";
-            else if (toIntnumber % numeralSystem == 1) result = result + "1";
-            else if (toIntnumber % numeralSystem == 2) result = result + "2";
-            else if (toIntnumber % numeralSystem == 3) result = result + "3";
-            else if (toIntnumber % numeralSystem == 4) result = result + "4";
-            else if(toIntnumber % numeralSystem == 5) result = result + "5";
-            else result = result + "1";
-            toIntnumber = toIntnumber / numeralSystem;
-        }
-    }
-    if(numeralSystem == 7)
-    {
-        for (int i = 0; toIntnumber >= 1; i++)
-        {
-            if (toIntnumber % numeralSystem == 0) result = result + "0";
-            else if (toIntnumber % numeralSystem == 1) result = result + "1";
-            else if (toIntnumber % numeralSystem == 2) result = result + "2";
-            else if (toIntnumber % numeralSystem == 3) result = result + "3";
-            else if (toIntnumber % numeralSystem == 4) result = result + "4";
-            else if(toIntnumber % numeralSystem == 5) result = result + "5";
-            else if(toIntnumber % numeralSystem == 6) result = result + "6";
-            else result = result + "1";
-            toIntnumber = toIntnumber / numeralSystem;
-        }
-    }
-    if(numeralSystem == 8)
-    {
-        for (int i = 0; toIntnumber >= 1; i++)
-        {
-            if (toIntnumber % numeralSystem == 0) result = result + "0";
-            else if (toIntnumber % numeralSystem == 1) result = result + "1";
-            else if (toIntnumber % numeralSystem == 2) result = result + "2";
-            else if (toIntnumber % numeralSystem == 3) result = result + "3";
-            else if (toIntnumber % numeralSystem == 4) result = result + "4";
-            else if(toIntnumber % numeralSystem == 5) result = result + "5";
-            else if(toIntnumber % numeralSystem == 6) result = result + "6";
-            else if(toIntnumber % numeralSystem == 7) result = result + "7";
-            else result = result + "1";
-            toIntnumber = toIntnumber / numeralSystem;
-        }
-    }
-    if(numeralSystem == 9)
-    {
-        for (int i = 0; toIntnumber >= 1; i++)
-        {
-            if (toIntnumber % numeralSystem == 0) result = result + "0";
-            else if (toIntnumber % numeralSystem == 1) result = result + "1";
-            else if (toIntnumber % numeralSystem == 2) result = result + "2";
-            else if (toIntnumber % numeralSystem == 3) result = result + "3";
-            else if (toIntnumber % numeralSystem == 4) result = result + "4";
-            else if(toIntnumber % numeralSystem == 5) result = result + "5";
-            else if(toIntnumber % numeralSystem == 6) result = result + "6";
-            else if(toIntnumber % numeralSystem == 7) result = result + "7";
-            else if(toIntnumber % numeralSystem == 8) result = result + "8";
-            else result = result + "1";
-            toIntnumber = toIntnumber / numeralSystem;
-        }
-    }
+    else System.Console.WriteLine("Вы ввели нечто некорректное");
     int[] res = new int[result.Length];
     for (int i = 0; i < result.Length; i++)
     {
@@ -159,5 +62,5 @@ void convertTo(string number, int numeralSystem)
         Console.Write($"{res[i]}");
     }
 }
-System.Console.WriteLine("Введите число, которое хотите перевести в другую систему счисления, нажмите 'enter' затем введите число обозначающее систему счисления.");
+System.Console.WriteLine("Введите число, которое хотите перевести в другую систему счисления, нажмите 'enter' затем введите число обозначающее систему счисления (от 2 до 9).");
 convertTo(Console.ReadLine(), Convert.ToInt32(Console.ReadLine()));
