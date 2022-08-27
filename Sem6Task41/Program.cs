@@ -10,10 +10,10 @@ void positiveNumbers(string userNumbers)
     for (int i = 0; i < positiveInt.Length; i++)
     {
         positiveInt[i] = Convert.ToInt32(ToIntConvert[i]);
-        System.Console.Write($"{positiveInt[i]} ");
+        // System.Console.Write($"{positiveInt[i]} ");
         if(positiveInt[i] > 0) count++;
     }
-    System.Console.WriteLine();
+    // System.Console.WriteLine();
     System.Console.WriteLine(count);
 }
 
