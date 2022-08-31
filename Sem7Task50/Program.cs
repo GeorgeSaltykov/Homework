@@ -27,9 +27,6 @@ void printArray(int[,] someArray)
         System.Console.WriteLine();
     }
 }
-int[,] array = new int[Convert.ToInt32(Console.ReadLine()), Convert.ToInt32(Console.ReadLine())];
-fillArray(array);
-printArray(array);
 
 void printElemet(int row, int column)
 {
@@ -39,4 +36,8 @@ void printElemet(int row, int column)
     }
     else System.Console.WriteLine("Данного элемента в массиве нет");
 }
+
+int[,] array = new int[Convert.ToInt32(Console.ReadLine()), Convert.ToInt32(Console.ReadLine())];
+fillArray(array);
+printArray(array);
 printElemet(Convert.ToInt32(Console.ReadLine()), Convert.ToInt32(Console.ReadLine()));
