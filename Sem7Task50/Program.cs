@@ -5,13 +5,13 @@
 // 8 4 2 4
 // 17 -> такого числа в массиве нет
 
-void fillArray(int[,] array)
+void fillArray(int[,] someArray)
 {
-    for (int i = 0; i < array.GetLength(0); i++)
+    for (int i = 0; i < someArray.GetLength(0); i++)
     {
-        for (int j = 0; j < array.GetLength(1); j++)
+        for (int j = 0; j < someArray.GetLength(1); j++)
         {
-            array[i, j] = new Random().Next(-9, 10);
+            someArray[i, j] = new Random().Next(-9, 10);
         }
     }
 }
@@ -28,16 +28,18 @@ void printArray(int[,] someArray)
     }
 }
 
+int[,] array = new int[Convert.ToInt32(Console.ReadLine()), Convert.ToInt32(Console.ReadLine())];
+
 void printElemet(int row, int column)
 {
     if(row < array.GetLength(0) && column < array.GetLength(1) && row >= 0 && column >= 0)
     {
-        System.Console.WriteLine(array[row, column]);
+        System.Console.WriteLine(array[row - 1, column -1]);
     }
     else System.Console.WriteLine("Данного элемента в массиве нет");
 }
 
-int[,] array = new int[Convert.ToInt32(Console.ReadLine()), Convert.ToInt32(Console.ReadLine())];
 fillArray(array);
 printArray(array);
+System.Console.WriteLine("Для вывода элемента массива введите номер строки, затем введите номер столбца");
 printElemet(Convert.ToInt32(Console.ReadLine()), Convert.ToInt32(Console.ReadLine()));
