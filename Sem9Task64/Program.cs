@@ -2,20 +2,12 @@
 // M = 1; N = 5. -> ""1, 2, 3, 4, 5""
 // M = 4; N = 8. -> ""4, 6, 7, 8""
 
-void naturalNumbersList(int M, int N)
+void naturalNumbersList(int m, int n)
 {
-    System.Console.WriteLine();
-    if (M > 0 
-        && N >= M)
+    if(m <= n)
     {
-        while (M <= N)
-        {
-            System.Console.WriteLine(M);
-            M++;
-        }
+    System.Console.WriteLine(m);
+    naturalNumbersList(m += 1, n);
     }
-    else System.Console.WriteLine("Вы ввели не натуральное число");
 }
-
-System.Console.WriteLine("Введите натуральное число");
-naturalNumbersList(Convert.ToInt32(Console.ReadLine()), Convert.ToInt32(Console.ReadLine()));
+naturalNumbersList(4, 8);

@@ -11,7 +11,7 @@ int AckermanFunction(int m, int n)
     if (m > 0
         && n > 0)
         return AckermanFunction(m - 1, AckermanFunction(m, n - 1));
-    return AckermanFunction(m, n);
+    else return 0;
 }
 
 System.Console.WriteLine(AckermanFunction(2, 3));

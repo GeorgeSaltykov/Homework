@@ -2,13 +2,13 @@
 // M = 1; N = 15 -> 120
 // M = 4; N = 8. -> 30
 
-int naturalNumbersSum(int M, int N)
+int result = new int();
+int naturalNumbersSum(int m, int n)
 {
-    int result = M;
-    while (M < N)
+    if (m <= n)
     {
-        result += M + 1;
-        M++;
+        result += m;
+        naturalNumbersSum(m + 1, n);
     }
     return result;
 }
